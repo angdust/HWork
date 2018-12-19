@@ -4,17 +4,7 @@ public class Cube {
 
     int colors[][] = new int[6][9];
 
-    //green CW
-    //green CCW
-    //blue
-    //white
-    //yellow
-    //red
-    //orange
-    //Turns
-
     public static int[][] greenCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[0][0];
         primaryFace[1] = colors[0][1];
@@ -36,7 +26,6 @@ public class Cube {
         colors[0][3] = primaryFace[7];
         colors[0][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[40] = colors[4][0];
         primaryOuter[43] = colors[4][3];
@@ -64,13 +53,11 @@ public class Cube {
         colors[4][3] = primaryOuter[35];
         colors[4][6] = primaryOuter[32];
 
-        //now you have to new values ater turning the green clockwise once
-        System.out.println("GreenClockWise");
+        Main.results +=("GreenClockWise\n");
         return colors;
     }
 
     public static int[][] greenCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[0][0];
         primaryFace[1] = colors[0][1];
@@ -92,7 +79,6 @@ public class Cube {
         colors[0][5] = primaryFace[7];
         colors[0][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[40] = colors[4][0];
         primaryOuter[43] = colors[4][3];
@@ -120,13 +106,11 @@ public class Cube {
         colors[5][3] = primaryOuter[35];
         colors[5][6] = primaryOuter[32];
 
-        //now you have to new values ater turning the green clockwise once
-        System.out.println("GreenCounterClockWise");
+        Main.results +=("GreenCounterClockWise\n");
         return colors;
     }
 
     public static int[][] whiteCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[1][0];
         primaryFace[1] = colors[1][1];
@@ -148,7 +132,6 @@ public class Cube {
         colors[1][3] = primaryFace[7];
         colors[1][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[46] = colors[4][6];
         primaryOuter[47] = colors[4][7];
@@ -176,13 +159,11 @@ public class Cube {
         colors[4][7] = primaryOuter[5];
         colors[4][8] = primaryOuter[2];
 
-        //now you have to new values ater turning the White clockwise once
-        System.out.println("WhiteClockWise");
+        Main.results +=("WhiteClockWise\n");
         return colors;
     }
 
     public static int[][] whiteCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[1][0];
         primaryFace[1] = colors[1][1];
@@ -204,7 +185,6 @@ public class Cube {
         colors[1][5] = primaryFace[7];
         colors[1][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[46] = colors[4][6];
         primaryOuter[47] = colors[4][7];
@@ -232,13 +212,11 @@ public class Cube {
         colors[5][1] = primaryOuter[5];
         colors[5][0] = primaryOuter[2];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("WhiteCounterClockWise");
+        Main.results +=("WhiteCounterClockWise\n");
         return colors;
     }
 
     public static int[][] blueCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[2][0];
         primaryFace[1] = colors[2][1];
@@ -260,7 +238,6 @@ public class Cube {
         colors[2][3] = primaryFace[7];
         colors[2][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[48] = colors[4][8];
         primaryOuter[45] = colors[4][5];
@@ -288,13 +265,11 @@ public class Cube {
         colors[4][5] = primaryOuter[15];
         colors[4][2] = primaryOuter[12];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("BlueClockWise");
+        Main.results +=("BlueClockWise\n");
         return colors;
     }
 
     public static int[][] blueCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[2][0];
         primaryFace[1] = colors[2][1];
@@ -316,7 +291,6 @@ public class Cube {
         colors[2][5] = primaryFace[7];
         colors[2][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[48] = colors[4][8];
         primaryOuter[45] = colors[4][5];
@@ -344,13 +318,11 @@ public class Cube {
         colors[5][5] = primaryOuter[15];
         colors[5][2] = primaryOuter[12];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("BlueCounterClockWise");
+        Main.results +=("BlueCounterClockWise\n");
         return colors;
     }
 
     public static int[][] yellowCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[3][0];
         primaryFace[1] = colors[3][1];
@@ -372,7 +344,6 @@ public class Cube {
         colors[3][3] = primaryFace[7];
         colors[3][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[42] = colors[4][2];
         primaryOuter[41] = colors[4][1];
@@ -400,13 +371,11 @@ public class Cube {
         colors[4][1] = primaryOuter[25];
         colors[4][0] = primaryOuter[22];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("YellowClockWise");
+        Main.results +=("YellowClockWise\n");
         return colors;
     }
 
     public static int[][] yellowCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[3][0];
         primaryFace[1] = colors[3][1];
@@ -428,7 +397,6 @@ public class Cube {
         colors[3][5] = primaryFace[7];
         colors[3][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[42] = colors[4][2];
         primaryOuter[41] = colors[4][1];
@@ -456,13 +424,11 @@ public class Cube {
         colors[5][7] = primaryOuter[25];
         colors[5][8] = primaryOuter[22];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("YellowCounterClockWise");
+        Main.results +=("YellowCounterClockWise\n");
         return colors;
     }
 
     public static int[][] orangeCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[4][0];
         primaryFace[1] = colors[4][1];
@@ -484,7 +450,6 @@ public class Cube {
         colors[4][3] = primaryFace[7];
         colors[4][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[32] = colors[3][2];
         primaryOuter[31] = colors[3][1];
@@ -512,13 +477,11 @@ public class Cube {
         colors[3][1] = primaryOuter[01];
         colors[3][0] = primaryOuter[00];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("OrangeClockWise");
+        Main.results +=("OrangeClockWise\n");
         return colors;
     }
 
     public static int[][] orangeCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[4][0];
         primaryFace[1] = colors[4][1];
@@ -540,7 +503,6 @@ public class Cube {
         colors[4][5] = primaryFace[7];
         colors[4][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[32] = colors[3][2];
         primaryOuter[31] = colors[3][1];
@@ -568,13 +530,11 @@ public class Cube {
         colors[1][1] = primaryOuter[01];
         colors[1][0] = primaryOuter[00];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("OrangeCounerClockWise");
+        Main.results +=("OrangeCounterClockWise\n");
         return colors;
     }
 
     public static int[][] redCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[5][0];
         primaryFace[1] = colors[5][1];
@@ -596,7 +556,6 @@ public class Cube {
         colors[5][3] = primaryFace[7];
         colors[5][6] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[16] = colors[1][6];
         primaryOuter[17] = colors[1][7];
@@ -624,13 +583,11 @@ public class Cube {
         colors[1][7] = primaryOuter[7];
         colors[1][8] = primaryOuter[8];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("RedClockWise");
+        Main.results +=("RedClockWise\n");
         return colors;
     }
 
     public static int[][] redCCW(int colors[][]) {
-        //First you have to change the face parts
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[5][0];
         primaryFace[1] = colors[5][1];
@@ -652,7 +609,6 @@ public class Cube {
         colors[5][5] = primaryFace[7];
         colors[5][2] = primaryFace[8];
 
-        //Then you have to change the outer parts
         int[] primaryOuter = new int[62];
         primaryOuter[16] = colors[1][6];
         primaryOuter[17] = colors[1][7];
@@ -680,8 +636,7 @@ public class Cube {
         colors[3][7] = primaryOuter[7];
         colors[3][8] = primaryOuter[8];
 
-        //now you have to new values ater turning the White CounterClokwise once
-        System.out.println("RedCounterClockWise");
+        Main.results +=("RedCounterClockWise\n");
         return colors;
     }
 }
