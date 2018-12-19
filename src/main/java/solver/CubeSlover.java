@@ -33,6 +33,32 @@ public class CubeSlover {
         System.out.println("UnYellow cross done");
         cube = doCYellowCross(cube);
         System.out.println("CYellow cross done");
+        cube = doYellowCorners(cube);
+        System.out.println("Yellow corners on the place");
+        cube = replaceYellowCorners(cube);
+        System.out.println("I guess done");
+        return cube;
+    }
+
+    public static Cube replaceYellowCorners(Cube cube) {
+
+        return cube;
+    }
+
+    public static Cube doYellowCorners(Cube cube) {
+        for(int i =0; i <= 3; i++) {
+            if (cube.colors[3][0] != 4) {
+                while (cube.colors[3][0] != 4) {
+                    cube.colors = blueCCW(cube.colors);
+                    cube.colors = whiteCCW(cube.colors);
+                    cube.colors = blueCW(cube.colors);
+                    cube.colors = whiteCW(cube.colors);
+                }
+            }
+            cube.colors = yellowCW(cube.colors);
+            System.out.println(i + 1);
+        }
+
         return cube;
     }
 
@@ -57,6 +83,103 @@ public class CubeSlover {
             cube.colors = yellowCW(cube.colors);
             cube.colors = yellowCW(cube.colors);
             cube.colors = greenCCW(cube.colors);
+        }
+
+        if (cube.colors[5][7] == 5 && cube.colors[2][5] == 3 && cube.colors[4][1] == 1 && cube.colors[0][3] == 6) {
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 3 && cube.colors[2][5] == 1 && cube.colors[4][1] == 6 &&
+                cube.colors[0][3] == 5) {
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 1 && cube.colors[2][5] == 6 && cube.colors[4][1] == 4 &&
+                cube.colors[0][3] == 3) {
+                cube.colors = yellowCCW(cube.colors);
+        } else if (cube.colors[5][7] == 3 && cube.colors[2][5] == 1 && cube.colors[4][1] == 5 &&
+                cube.colors[0][3] == 6) {
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 1 && cube.colors[2][5] == 5 && cube.colors[4][1] == 6 &&
+                cube.colors[0][3] == 3) {
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 5 && cube.colors[2][5] == 6 && cube.colors[4][1] == 3 &&
+                cube.colors[0][3] == 1) {
+            cube.colors = yellowCCW(cube.colors);
+        } else if (cube.colors[5][7] == 3 && cube.colors[2][5] == 5 && cube.colors[4][1] == 6 &&
+                cube.colors[0][3] == 1) {
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 5 && cube.colors[2][5] == 6 && cube.colors[4][1] == 1 &&
+                cube.colors[0][3] == 3) {
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 6 && cube.colors[2][5] == 1 && cube.colors[4][1] == 3 &&
+                cube.colors[0][3] == 5) {
+            cube.colors = yellowCCW(cube.colors);
+        } else if (cube.colors[5][7] == 6 && cube.colors[2][5] == 5 && cube.colors[4][1] == 1 &&
+                cube.colors[0][3] == 3) {
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 5 && cube.colors[2][5] == 1 && cube.colors[4][1] == 3 &&
+                cube.colors[0][3] == 6) {
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 1 && cube.colors[2][5] == 3 && cube.colors[4][1] == 6 &&
+                cube.colors[0][3] == 5) {
+            cube.colors = yellowCCW(cube.colors);
+        } else if (cube.colors[5][7] == 3 && cube.colors[2][5] == 5 && cube.colors[4][1] == 1 && //
+                cube.colors[0][3] == 6) {
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 5 && cube.colors[2][5] == 3 && cube.colors[4][1] == 6 &&
+                cube.colors[0][3] == 3) {
+            cube.colors = yellowCCW(cube.colors);
+            cube.colors = yellowCCW(cube.colors);
+        } else if (cube.colors[5][7] == 1 && cube.colors[2][5] == 6 && cube.colors[4][1] == 3 &&
+                cube.colors[0][3] == 5) {
+            cube.colors = yellowCCW(cube.colors);
+        }
+
+        //RG
+        if (cube.colors[5][7] == 6 && cube.colors[2][5] == 5 && cube.colors[4][1] == 3 && cube.colors[0][3] == 1) {
+            cube.colors = redCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = redCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = redCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = redCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 6 && cube.colors[2][5] == 3 && cube.colors[4][1] == 1 &&  //BR
+                cube.colors[0][3] == 5) {
+            cube.colors = blueCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = blueCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = blueCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = blueCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 1 && cube.colors[2][5] == 3 && cube.colors[4][1] == 5 &&  //OB
+                cube.colors[0][3] == 6) {
+            cube.colors = orangeCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = orangeCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = orangeCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = orangeCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+        } else if (cube.colors[5][7] == 3 && cube.colors[2][5] == 6 && cube.colors[4][1] == 5 &&  //GO
+                cube.colors[0][3] == 1) {
+            cube.colors = greenCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = greenCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = greenCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
+            cube.colors = greenCCW(cube.colors);
+            cube.colors = yellowCW(cube.colors);
         }
 
         return cube;
