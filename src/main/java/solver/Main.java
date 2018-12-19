@@ -131,7 +131,7 @@ public class Main extends Application {
                     System.out.println("Checkpoint");
                     CubeSlover cubeSlover = new CubeSlover();
                     rCube = cubeSlover.makeSolution(rCube);
-                    System.out.println("Checkpoint");
+                    System.out.println("Chekpoint");
                     ScrollPane resultTXT = new ScrollPane();
                     resultTXT.setLayoutX(700);
                     resultTXT.setLayoutY(10);
