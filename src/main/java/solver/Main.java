@@ -84,7 +84,7 @@ public class Main extends Application {
                 "По одной стороне куба (пример: 1 2 3 4 5 6 7 8 9).");
         rule.setLayoutX(30);
         rule.setLayoutY(30);
-        TextField textField = new TextField();
+        final TextField textField = new TextField();
         textField.setLayoutX(30);
         textField.setLayoutY(80);
         Text codeOfColors = new Text("Коды цветов клеток\n1 = GREEN\n2 = WHITE\n3 = BLUE\n" +
