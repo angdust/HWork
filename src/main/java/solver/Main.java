@@ -122,9 +122,15 @@ public class Main extends Application {
                     int count = 0;
                     String line;
                     while (((line = bufferedReader.readLine()) != null) && (count <= 6)) {
-                        input[count] = line.split(" ");
-                        count++;
-                        counter = 6;
+                        Pattern p = Pattern.compile("[1-6] [1-6] [1-6] [1-6] [1-6] [1-6] [1-6] [1-6] [1-6]");
+                        Matcher m = p.matcher(line);
+                        if (m.matches()) {
+                            input[count] = line.split(" ");
+                            count++;
+                            counter = 6;
+                        } else {
+                            isCorrect = false;
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -138,7 +144,9 @@ public class Main extends Application {
             @Override
             public void handle(MouseEvent event) {
                 if (counter >= 5) {
-                    rCube.colors = getColors();
+                    if (isCorrect) {
+                        rCube.colors = getColors();
+                    }
                     String curStr = new String();
                     for (int t = 0; t < 6; t++) {
                         for (int d = 0; d < 9; d++) {
