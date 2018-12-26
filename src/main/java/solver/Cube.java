@@ -2,7 +2,7 @@ package solver;
 
 public class Cube {
 
-    int colors[][] = new int[6][9];
+    public int[][] colors = new int[6][9];
 
     public static int[][] greenCW(int colors[][]) {
         int[] primaryFace = new int[62];
