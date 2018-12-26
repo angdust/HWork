@@ -2,7 +2,6 @@ package solver;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,12 +12,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,39 +35,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-//        Cube cube = new Cube();
-//        cube.colors = getColors1();
-//        System.out.println("Checkpoint");
-//        CubeSlover cubeSlover = new CubeSlover();
-//        cube = cubeSlover.makeSolution(cube);
-//        System.out.println("Checkpoint");
-//
-//        for (int t = 0; t < 6; t++) {
-//            for (int d = 0; d < 9; d++) {
-//                System.out.print(cube.colors[t][d] + " ");
-//            }
-//            System.out.println();
-//        }
     }
 
-    public static int[][] getColors1() {
-        int input[][] = new int[6][9];
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the colors\n1 = GREEN\n2 = WHITE\n3 = BLUE\n" +
-                "4 = YELLOW\n5 = ORANGE\n6 = RED\n");
-        int c = 0;
-        while (c < 6) {
-            int i = 0;
-            String[] line = in.nextLine().split(" ");
-            while (i < 9) {
-                input[c][i] = Integer.parseInt(line[i]);
-                i++;
-            }
-            c++;
-        }
-        return input;
-    }
-
+    //заполняем cube.colors
     private int[][] getColors() {
         int rInput[][] = new int[6][9];
         int c = 0;
@@ -80,7 +50,7 @@ public class Main extends Application {
             }
             c++;
         }
-        for (int j = 0; j < 6; j++) {
+        for (int j = 0; j < 6; j++) {                   //проверяем одну из ошибок
             for (int t = 0; t < 9; t++) {
                 if (rInput[j][t] == 1) {
                     check[0]++;
@@ -97,18 +67,18 @@ public class Main extends Application {
                 }
             }
         }
-            for (int t = 0; t < 6; t++) {
-                if (check[t] >= 10) {
-                    isCorrect = false;
-                }
+        for (int t = 0; t < 6; t++) {
+            if (check[t] >= 10) {
+                isCorrect = false;
             }
+        }
         return rInput;
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Scene scene = new Scene(app, 1000, 700, WHITE);
-        primaryStage.setTitle("Rubik's solver");
+        primaryStage.setTitle("Rubik's solver");            //GUI
         primaryStage.setScene(scene);
         Text rule = new Text("Введите цвета клеток по порядку, указзаному на схеме.\n" +
                 "По одной стороне куба (пример: 1 2 3 4 5 6 7 8 9).");
@@ -148,7 +118,7 @@ public class Main extends Application {
 
                 BufferedReader bufferedReader = null;
                 try {
-                    bufferedReader = new BufferedReader(new FileReader(new File("input/input1.txt")));
+                    bufferedReader = new BufferedReader(new FileReader(new File("input/input0.txt")));
                     int count = 0;
                     String line;
                     while (((line = bufferedReader.readLine()) != null) && (count <= 6)) {
@@ -182,12 +152,12 @@ public class Main extends Application {
 
                     CubeSlover cubeSlover = new CubeSlover();
                     if (isCorrect) {
-                        rCube = cubeSlover.makeSolution(rCube);
+                        rCube = cubeSlover.makeSolution(rCube);         //запускаем алгоритм
                     }
                     System.out.println("Checkpoint");
                     for (int t = 0; t < 6; t++) {
                         for (int d = 0; d < 9; d++) {
-                            if (rCube.colors[t][d] != t + 1){
+                            if (rCube.colors[t][d] != t + 1) {
                                 isCorrect = false;
                             }
                         }

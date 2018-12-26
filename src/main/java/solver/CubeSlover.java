@@ -40,6 +40,7 @@ public class CubeSlover {
         return cube;
     }
 
+    //переставляем в желтом слое углы туда, где они должны быть
     public static Cube replaceYellowCorners(Cube cube) {
         boolean fi = false;
         boolean s = false;
@@ -67,7 +68,6 @@ public class CubeSlover {
         }
 
         if (!fi && !s && !t && !fo) {
-            System.out.println("Timetodo");
             cube.colors = yellowCW(cube.colors);
             cube.colors = greenCW(cube.colors);
             cube.colors = yellowCCW(cube.colors);
@@ -181,6 +181,7 @@ public class CubeSlover {
         return cube;
     }
 
+    //разворот углов, чтобы желтый был вверху
     public static Cube doYellowCorners(Cube cube) {
         for (int i = 0; i <= 3; i++) {
             if (cube.colors[3][0] != 4) {
@@ -192,13 +193,13 @@ public class CubeSlover {
                 }
             }
             cube.colors = yellowCW(cube.colors);
-            System.out.println(i + 1);
-            Main.results +=("Поворот\n");
+            Main.results += ("Поворот\n");
         }
 
         return cube;
     }
 
+    //делает правильный желтый крест(совмещает ребра с центрами)
     public static Cube doCYellowCross(Cube cube) {
         if (cube.colors[5][7] == 6 && cube.colors[2][5] == 1 && cube.colors[4][1] == 5 && cube.colors[0][3] == 3) {
             cube.colors = yellowCW(cube.colors);
@@ -331,6 +332,7 @@ public class CubeSlover {
         return cube;
     }
 
+    //собирает любой крест(необязательно правильный)
     public static Cube doUnCYellowCross(Cube cube) {
         if (cube.colors[3][1] != 4 && cube.colors[3][3] != 4 && cube.colors[3][5] != 4 && cube.colors[3][7] != 4) {
             cube.colors = redCW(cube.colors);
@@ -922,12 +924,12 @@ public class CubeSlover {
             cube.colors = redCCW(cube.colors);
             cube.colors = yellowCCW(cube.colors);
             cube.colors = redCW(cube.colors);
-        } else if(cube.colors[2][8] == 2 && cube.colors[5][8] == 1 && cube.colors[3][6] == 6){
+        } else if (cube.colors[2][8] == 2 && cube.colors[5][8] == 1 && cube.colors[3][6] == 6) {
             cube.colors = yellowCCW(cube.colors);
             cube.colors = redCCW(cube.colors);
             cube.colors = yellowCCW(cube.colors);
             cube.colors = redCW(cube.colors);
-        }else if (cube.colors[3][0] == 2 && cube.colors[4][2] == 1 && cube.colors[2][2] == 6) {
+        } else if (cube.colors[3][0] == 2 && cube.colors[4][2] == 1 && cube.colors[2][2] == 6) {
             cube.colors = yellowCW(cube.colors);
             cube.colors = yellowCW(cube.colors);
             cube.colors = redCCW(cube.colors);

@@ -2,8 +2,10 @@ package solver;
 
 public class Cube {
 
+    //представление куба
     public int[][] colors = new int[6][9];
 
+    //12 поворотов каждой стороны по цвету центра по и против часовой стрелки
     public static int[][] greenCW(int colors[][]) {
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[0][0];
@@ -53,7 +55,7 @@ public class Cube {
         colors[4][3] = primaryOuter[35];
         colors[4][6] = primaryOuter[32];
 
-        Main.results +=("GreenClockWise\n");
+        Main.results += ("GreenClockWise\n");
         return colors;
     }
 
@@ -106,7 +108,7 @@ public class Cube {
         colors[5][3] = primaryOuter[35];
         colors[5][6] = primaryOuter[32];
 
-        Main.results +=("GreenCounterClockWise\n");
+        Main.results += ("GreenCounterClockWise\n");
         return colors;
     }
 
@@ -159,7 +161,7 @@ public class Cube {
         colors[4][7] = primaryOuter[5];
         colors[4][8] = primaryOuter[2];
 
-        Main.results +=("WhiteClockWise\n");
+        Main.results += ("WhiteClockWise\n");
         return colors;
     }
 
@@ -212,7 +214,7 @@ public class Cube {
         colors[5][1] = primaryOuter[5];
         colors[5][0] = primaryOuter[2];
 
-        Main.results +=("WhiteCounterClockWise\n");
+        Main.results += ("WhiteCounterClockWise\n");
         return colors;
     }
 
@@ -265,7 +267,7 @@ public class Cube {
         colors[4][5] = primaryOuter[15];
         colors[4][2] = primaryOuter[12];
 
-        Main.results +=("BlueClockWise\n");
+        Main.results += ("BlueClockWise\n");
         return colors;
     }
 
@@ -318,7 +320,7 @@ public class Cube {
         colors[5][5] = primaryOuter[15];
         colors[5][2] = primaryOuter[12];
 
-        Main.results +=("BlueCounterClockWise\n");
+        Main.results += ("BlueCounterClockWise\n");
         return colors;
     }
 
@@ -371,7 +373,7 @@ public class Cube {
         colors[4][1] = primaryOuter[25];
         colors[4][0] = primaryOuter[22];
 
-        Main.results +=("YellowClockWise\n");
+        Main.results += ("YellowClockWise\n");
         return colors;
     }
 
@@ -424,7 +426,7 @@ public class Cube {
         colors[5][7] = primaryOuter[25];
         colors[5][8] = primaryOuter[22];
 
-        Main.results +=("YellowCounterClockWise\n");
+        Main.results += ("YellowCounterClockWise\n");
         return colors;
     }
 
@@ -477,7 +479,7 @@ public class Cube {
         colors[3][1] = primaryOuter[01];
         colors[3][0] = primaryOuter[00];
 
-        Main.results +=("OrangeClockWise\n");
+        Main.results += ("OrangeClockWise\n");
         return colors;
     }
 
@@ -530,7 +532,7 @@ public class Cube {
         colors[1][1] = primaryOuter[01];
         colors[1][0] = primaryOuter[00];
 
-        Main.results +=("OrangeCounterClockWise\n");
+        Main.results += ("OrangeCounterClockWise\n");
         return colors;
     }
 
@@ -583,7 +585,7 @@ public class Cube {
         colors[1][7] = primaryOuter[7];
         colors[1][8] = primaryOuter[8];
 
-        Main.results +=("RedClockWise\n");
+        Main.results += ("RedClockWise\n");
         return colors;
     }
 
@@ -636,7 +638,7 @@ public class Cube {
         colors[3][7] = primaryOuter[7];
         colors[3][8] = primaryOuter[8];
 
-        Main.results +=("RedCounterClockWise\n");
+        Main.results += ("RedCounterClockWise\n");
         return colors;
     }
 }
