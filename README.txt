@@ -1,4 +1,5 @@
 My project for university studies.
+
 One of the possible ways to build a Rubik's Cube.
 
 The Rubik's cube implementation is taken from the video:
